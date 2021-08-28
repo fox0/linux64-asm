@@ -1,7 +1,7 @@
 format ELF64 executable 3
 entry _start
 
-include 'linux64.inc'
+include 'linux64/syscalls.asm'
 
 segment executable
 align 8
