@@ -3,7 +3,7 @@ stdout = 1
 stderr = 2
 
 ; linux 2.6.35 compatible x86-64 syscalls table
-sys_read                        = 0
+sys_read                        = 0  ; size_t read(unsigned int fd, char *buf, size_t count)
 sys_write                       = 1  ; size_t write(unsigned int fd, const char *buf, size_t count)
 sys_open                        = 2
 sys_close                       = 3
