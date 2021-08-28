@@ -5,12 +5,14 @@ hello db "Hello fox", 10  ; \n
 .len = $ - hello
 
 _start:
-    mov edx, hello.len
-    mov ecx, hello
-    mov ebx, 1
-    mov eax, 4
+    ; size_t write(unsigned int fd, const char *buf, size_t count)
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, hello
+    mov rdx, hello.len
+    syscall
 
-    int 0x80
-    mov ebx, 0
-    mov eax, 1
-    int 0x80
+    ; void exit(int exit_code)
+    mov rax, 60
+    mov rdi, 0
+    syscall
